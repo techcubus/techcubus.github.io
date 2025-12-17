@@ -1,6 +1,6 @@
-#### `git` notes
+# `git` notes
 
-# Remote over ssh setup
+## Remote over ssh setup
 * Create or find a key
 >  `ssh-keygen -t ed25519 -C "your_email@example.com"`
 * May have to start the agent and add the key
