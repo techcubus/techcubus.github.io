@@ -1,1 +1,11 @@
 # techcubus.github.io
+
+> "A grimoire is a textbook of magic or a personal, evolving record of a witch's spiritual and magical practices, including spells, rituals, and personal reflections. The word comes from the French term grammaire, meaning "grammar," and it refers to a book of rules or instructions, though in this case, for magic."
+> 
+> *— Some inorganic silicon rock, somewhere*
+
+## Welcome to my grimoire!
+This is where I take notes when I decide that GitHub is the best place to do so.
+
+## Contents thus far:
+* [Git & Github](gitnotes.md)
