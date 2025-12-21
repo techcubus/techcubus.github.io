@@ -35,3 +35,5 @@
 > $ git branch -M main
 > $ git push -u origin main
 > ```
+
+On Windows, running in PowerShell, for me this appeared to hang git without an error as a dialog to pick the authentication method had opened behind other windows.
