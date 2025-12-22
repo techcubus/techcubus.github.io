@@ -6,6 +6,7 @@
 * May have to start the agent and add the key
 > ```bash
 >  $ eval $(ssh-agent -D)
+>  # Yes, ssh-agent anctually returns environment variables that we want to eval
 >  $ aah-add ~/.ssh/id_ed25519
 > ```
 * Add public key to github if necessary under authentication
