@@ -1,6 +1,11 @@
 # Random Windows XP Notes
 You would be foolish to assume anything here works *after* Windows XP, and really I can't guarantee this stuff actually works in Windows XP.
 
+### IE6 Notes
+* Force IE6 reinstall
+>`rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 C:\windows\inf\ie.inf`
+ 
+
 ### `netsh` notes
 * This command can manipulate most things network; see `netsh /?`
 * TCP/Winsock resets - for strange network/TCP issues
@@ -59,3 +64,7 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
     #define PROFILE_BACKUP_EXISTS   0x00004000
     #define PROFILE_THIS_IS_BAK     0x00008000
 ```
+
+### Miscellaneous
+* Show installed file system minifilters
+>`fltmc`
