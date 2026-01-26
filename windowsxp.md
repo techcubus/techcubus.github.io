@@ -101,3 +101,11 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
 | Certmgr.msc | Certificate Manager |
 | Ciadv.msc | Indexing Service |
  
+### EMERGENCY SHUTDOWN!
+Handy for when you don't want the computer to write anything to the user's (generally "roaming") hive/profile before reboot. Otherwise, don't use this if a normal shutdown is possible!
+ 
+  1. Control+Alt+Delete
+  2. Control click on "Shut Down…"
+  3. Click "OK" 
+
+ ![Screenshot of the dire emergency shutdown dialog.]{/assets/mrgency-shutdown.png)
