@@ -3,7 +3,7 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
 
 ### IE6 Notes
 * Force IE6 reinstall
->`rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 C:\windows\inf\ie.inf`
+> `rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 C:\windows\inf\ie.inf`
  
 
 ### `netsh` notes
@@ -13,9 +13,12 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
 > `netsh winsock reset catalog`
 
 ### Registry Notes
-
 * `REG` - lets you query and modify the registry from the command line
   * `ADD` - Add non-existent keys
+    * '/v' - Value to add
+	* '/t' - Value data type
+	* '/d' - Data to add
+	* '/f' - Force overwrite
   * `QUERY` - dump keys to stdout
     * `/s` - recurse
 
