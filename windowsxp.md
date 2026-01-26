@@ -3,14 +3,14 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
 
 ### IE6 Notes
 * Force IE6 reinstall
-> `rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 C:\windows\inf\ie.inf`
+  > `rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 C:\windows\inf\ie.inf`
  
 
 ### `netsh` notes
 * This command can manipulate most things network; see `netsh /?`
 * TCP/Winsock resets - for strange network/TCP issues
-> `netsh int ip reset resetlog.txt`
-> `netsh winsock reset catalog`
+  > `netsh int ip reset resetlog.txt`
+  > `netsh winsock reset catalog`
 
 ### Registry Notes
 * `REG` - lets you query and modify the registry from the command line
@@ -23,30 +23,30 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
     * `/s` - recurse
 
 * Enable `REGEDIT` if it has been disabled through policy
-> `REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f`
+  > `REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f`
 
 * Enable `TASKMGR` if it has been disabled through policy
-> `REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 0 /f`
+  > `REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 0 /f`
 
 * Show (network?) Printer registry settings
->  `REG QUERY "HKCU\Printers\Connections\"`
+  >  `REG QUERY "HKCU\Printers\Connections\"`
 
 * Show Windows User Profile keys
->  `REG QUERY "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList" /s`
+  >  `REG QUERY "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList" /s`
 
 * Show Outlook profile keys
->  `REG QUERY "HKCU\Software\Microsoft\Windows NT\Current Version\Windows Messaging Subsystem\Profiles" /s`
+  >  `REG QUERY "HKCU\Software\Microsoft\Windows NT\Current Version\Windows Messaging Subsystem\Profiles" /s`
 
 * Show Mapped network drives
->  `REG QUERY "HKCU\Network" /s`
+  >  `REG QUERY "HKCU\Network" /s`
 
 * Show TCPIP parameters rewritten by `netsh int ip reset`
->  `REG QUERY "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\"`
->  `REG QUERY "HKLM\SYSTEM\CurrentControlSet\Services\DHCP\Parameters\"`
+  >  `REG QUERY "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\"`
+  >  `REG QUERY "HKLM\SYSTEM\CurrentControlSet\Services\DHCP\Parameters\"`
 
 * Show IE6 Internet Zone Settings
->  `REG QUERY "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap" /s`
->  `REG QUERY "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones" /s`
+  >  `REG QUERY "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap" /s`
+  >  `REG QUERY "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones" /s`
 
 * Meaning of bits in key `HKLM\Software\Microsoft\Windows NT\CurrentVersion\ProfileList\SID State`:
  ```
@@ -70,4 +70,34 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
 
 ### Miscellaneous
 * Show installed file system minifilters
->`fltmc`
+  >`fltmc`
+
+* Reset Outlook navigation pane window to defaults (For cannot open the outlook window errors)
+  > `outlook.exe /resetnavpane`
+ 
+* Show which tasks control which service
+  > `tasklist /svc`
+
+* Start a separate Explorer process
+  > `explorer.exe /separate`
+
+* Control Panel Applets. Useful to launch from an admin shell.
+
+| Command | Applet |
+| --- | --- |
+| Access.cpl | Accessibility Options |
+| Appwiz.cpl | Add/Remove Programs |
+| Desk.cpl | Display Options |
+| Hdwwiz.cpl | Add New Hardware Wizard (Win 7 - Device Manager) |
+| Inetcpl.cpl | Internet Options |
+| Main.cpl | Mouse Properties |
+| Mmsys.cpl | Sound control panel |
+| Ncpa.cpl | Network Connections (will not work under runas correctly) |
+| Powercfg.cpl | Power Options |
+| Sysdm.cpl | System Properties (computer name, vm file size, remote, etc) |
+| Odbccp32.cpl | ODCB Data Source Administration (Win32) |
+| %windir%\system32\Odbcad32.exe | ODCB Data Source Administrator for 64 bit applications (Win64) |
+| %windir%\SysWOW64\odbcad32.exe | ODBC Data Source Administrator for 32 bit applications (Win64) |
+| Certmgr.msc | Certificate Manager |
+| Ciadv.msc | Indexing Service |
+ 
