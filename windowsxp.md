@@ -108,4 +108,4 @@ Handy for when you don't want the computer to write anything to the user's (gene
   2. Control click on "Shut Down…"
   3. Click "OK" 
 
- ![Screenshot of the dire emergency shutdown dialog.]{/assets/mrgency-shutdown.png)
+ ![Screenshot of the dire emergency shutdown dialog.]{/assets/mrgency-shutdown.png}
