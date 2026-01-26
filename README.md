@@ -5,7 +5,13 @@
 > *— Some inorganic silicon rock, somewhere*
 
 ## Welcome to my grimoire!
+
 This is where I take notes when I decide that GitHub is the best place to do so.
 
 ## Contents thus far:
+
 * [Git & Github](gitnotes.md)
+* [Electronics](electronics_notes.md)
+* [Windows XP from the trenches](windowsxp.md)
+
+
