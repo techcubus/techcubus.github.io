@@ -13,7 +13,7 @@ date: 2026-01-26T23:23:08Z
   > `rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 C:\windows\inf\ie.inf`
  
 
-### `netsh` notes
+### netsh notes
 * This command can manipulate most things network; see `netsh /?`
 * TCP/Winsock resets - for strange network/TCP issues
   > `netsh int ip reset resetlog.txt`
@@ -44,8 +44,8 @@ date: 2026-01-26T23:23:08Z
 
 * Show Outlook profile keys
   >  `REG QUERY "HKCU\Software\Microsoft\Windows NT\Current Version\Windows Messaging Subsystem\Profiles" /s`
-  > [!NOTE]
-  > Note the space in "Current Version"
+> [!IMPORTANT]
+> Note the space in "Current Version"
 
 * Show Mapped network drives
   >  `REG QUERY "HKCU\Network" /s`
@@ -60,8 +60,8 @@ date: 2026-01-26T23:23:08Z
 
 * Meaning of bits in key `HKLM\Software\Microsoft\Windows NT\CurrentVersion\ProfileList\SID State`:
 
-  > [!NOTE]
->   > This is a bitmask which the explanation of is beyond the scope here, but quickly, in case I do forget: these 32-bit hex numbers represent each of thhe 32 bits in the DWORD that is the SID State. Each digit represents four bits and each individual bit's binary values. The desired options are all ORed together into a single 32-bit number. 
+> [!NOTE]
+> This is a bitmask which the explanation of is beyond the scope here, but quickly, in case I do forget: these 32-bit hex numbers represent each of the 32 bits in the DWORD that is the SID State. Each digit represents four bits (a nybble, yes really) and each individual bit's binary values. The desired options are all bitwise-ORed together into a single 32-bit number. 
 
  ```
     #define PROFILE_MANDATORY       0x00000001
