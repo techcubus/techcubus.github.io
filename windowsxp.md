@@ -1,8 +1,15 @@
+---
+title: Untitled
+author: Ruri Hoshino
+date: 2026-01-26T23:23:08Z
+---
+
 # Random Windows XP Notes
-You would be foolish to assume anything here works *after* Windows XP, and really I can't guarantee this stuff actually works in Windows XP.
+**These notes are historical.** You would be foolish to assume anything here works *after* Windows XP, and really I can't guarantee this stuff actually works in Windows XP itself. Most is with XP SP3 in mind, but if you're here you're not concerned with my faith in my notes being useful.
 
 ### IE6 Notes
 * Force IE6 reinstall
+  * Good for when IE6 won't start or won't open links after surgically removing malware.
   > `rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 C:\windows\inf\ie.inf`
  
 
@@ -11,14 +18,15 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
 * TCP/Winsock resets - for strange network/TCP issues
   > `netsh int ip reset resetlog.txt`
   > `netsh winsock reset catalog`
+  > You should reboot.
 
 ### Registry Notes
 * `REG` - lets you query and modify the registry from the command line
   * `ADD` - Add non-existent keys
-    * '/v' - Value to add
-	* '/t' - Value data type
-	* '/d' - Data to add
-	* '/f' - Force overwrite
+    * `/v` - Value to add
+	* `/t` - Value data type
+	* `/d` - Data to add
+	* `/f` - Force overwrite
   * `QUERY` - dump keys to stdout
     * `/s` - recurse
 
@@ -36,6 +44,8 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
 
 * Show Outlook profile keys
   >  `REG QUERY "HKCU\Software\Microsoft\Windows NT\Current Version\Windows Messaging Subsystem\Profiles" /s`
+  > [!NOTE]
+  > Note the space in "Current Version"
 
 * Show Mapped network drives
   >  `REG QUERY "HKCU\Network" /s`
@@ -49,6 +59,10 @@ You would be foolish to assume anything here works *after* Windows XP, and reall
   >  `REG QUERY "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones" /s`
 
 * Meaning of bits in key `HKLM\Software\Microsoft\Windows NT\CurrentVersion\ProfileList\SID State`:
+
+  > [!NOTE]
+>   > This is a bitmask which the explanation of is beyond the scope here, but quickly, in case I do forget: these 32-bit hex numbers represent each of thhe 32 bits in the DWORD that is the SID State. Each digit represents four bits and each individual bit's binary values. The desired options are all ORed together into a single 32-bit number. 
+
  ```
     #define PROFILE_MANDATORY       0x00000001
     #define PROFILE_USE_CACHE       0x00000002
