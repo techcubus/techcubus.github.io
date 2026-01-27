@@ -14,7 +14,7 @@
 * TCP/Winsock resets - for extreme network/TCP issues  
   `netsh int ip reset resetlog.txt`  
   `netsh winsock reset catalog`  
-   You should reboot.  
+   You should reboot and reconfigure networking.  
 
 ### Registry Notes
 * `REG` - lets you query and modify the registry from the command line
