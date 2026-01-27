@@ -17,7 +17,6 @@ This is where I take notes when I decide that GitHub is the best place to do so.
 * [Active Directory](activedirectory.md)
 * [MacOS X](macosx.md)
 * [Unix](unixnotes.md)
-* [OpenSSL](opensslnotes.md)
 * [AV Equipment](avstuff.md)
 
 
