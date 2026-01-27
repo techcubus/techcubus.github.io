@@ -1,9 +1,3 @@
----
-title: Untitled
-author: Ruri Hoshino
-date: 2026-01-26T23:23:08Z
----
-
 # Random Windows XP Notes
 **These notes are historical.** You would be foolish to assume anything here works *after* Windows XP, and really I can't guarantee this stuff actually works in Windows XP itself. Most is with XP SP3 in mind, but if you're here you're not concerned with my faith in my notes being useful.
 
