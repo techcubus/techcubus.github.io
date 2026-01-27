@@ -15,5 +15,10 @@ This is where I take notes when I decide that GitHub is the best place to do so.
 * [Windows XP for the Desperate](windowsxp.md)
 * [OpenSSL](opensslnotes.md)
 * [Active Directory](activedirectory.md)
+* [MacOS X](macosx.md)
+* [Unix](unixnotes.md)
+* [OpenSSL](opensslnotes.md)
+* [AV Equipment](avstuff.md)
+
 
 
