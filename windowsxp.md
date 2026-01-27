@@ -8,7 +8,7 @@
 ### netsh notes
 * This command can manipulate most things network; see `netsh /?`
 
-* You can see some malware in the Winsock catalog, lots of stuff is normal and good.    
+* Some malware shows in the Winsock catalog, but a large number of entries are normal and good.    
   `netsh winsock show catalog`  
 
 * TCP/Winsock resets - for extreme network/TCP issues  
@@ -32,7 +32,7 @@
 * Enable `TASKMGR` if it has been disabled through policy  
   `REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 0 /f`
 
-* Show (network?) Printer registry settings  
+* Show (network?) printer registry settings  
    `REG QUERY "HKCU\Printers\Connections\"`
 
 * Show Windows User Profile keys  
