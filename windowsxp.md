@@ -41,7 +41,7 @@
 * Show Outlook profile keys  
    `REG QUERY "HKCU\Software\Microsoft\Windows NT\Current Version\Windows Messaging Subsystem\Profiles" /s`
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Note the space in "Current Version"
 
 * Show Mapped network drives  
@@ -57,7 +57,7 @@
 
 * Meaning of bits in key `HKLM\Software\Microsoft\Windows NT\CurrentVersion\ProfileList\SID State`:
 
-> [!NOTE]
+> [!NOTE]  
 > This is a bitmask which the explanation of is beyond the scope here, but quickly, in case I do forget: these 32-bit hex numbers represent each of the 32 bits in the DWORD that is the SID State. Each digit represents four bits (a nybble, yes really) and each individual bit's binary values. The desired options are all bitwise-ORed together into a single 32-bit number. 
 
  ```
