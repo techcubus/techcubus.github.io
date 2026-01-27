@@ -8,7 +8,7 @@
 ```bash
 $ eval $(ssh-agent -D)
 # Yes, ssh-agent actually returns environment variables that we want to eval
-$ aah-add ~/.ssh/id_ed25519
+$ ssh-add ~/.ssh/id_ed25519
 ```
 * Add public key to github if necessary under authentication  
 
