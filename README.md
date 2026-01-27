@@ -12,7 +12,7 @@ This is where I take notes when I decide that GitHub is the best place to do so.
 
 * [Git & Github](gitnotes.md)
 * [Electronics](electronics_notes.md)
-* [Windows XP from the trenches](windowsxp.md)
+* [Windows XP for the Desperate](windowsxp.md)
 * [OpenSSL](opensslnotes.md)
 * [Active Directory](activedirectory.md)
 
