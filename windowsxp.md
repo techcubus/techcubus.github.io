@@ -1,18 +1,20 @@
-# Random Windows XP Notes
+# Misc Windows XP Notes For Desperate People
 **These notes are historical.** You would be foolish to assume anything here works *after* Windows XP, and really I can't guarantee this stuff actually works in Windows XP itself. Most is with XP SP3 in mind, but if you're here you're not concerned with my faith in my notes being useful.
 
 ### IE6 Notes
-* Force IE6 reinstall
-  * Good for when IE6 won't start or won't open links after surgically removing malware.
-  > `rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 C:\windows\inf\ie.inf`
+* Force IE6 reinstal, good for when IE6 won't start or won't open links after surgically removing malware.  
+  `rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 C:\windows\inf\ie.inf`
  
-
 ### netsh notes
 * This command can manipulate most things network; see `netsh /?`
-* TCP/Winsock resets - for strange network/TCP issues
-  > `netsh int ip reset resetlog.txt`
-  > `netsh winsock reset catalog`
-  > You should reboot.
+
+* You can see some malware in the Winsock catalog, lots of stuff is normal and good.    
+  `netsh winsock show catalog`  
+
+* TCP/Winsock resets - for extreme network/TCP issues  
+  `netsh int ip reset resetlog.txt`  
+  `netsh winsock reset catalog`  
+   You should reboot.  
 
 ### Registry Notes
 * `REG` - lets you query and modify the registry from the command line
@@ -24,33 +26,34 @@
   * `QUERY` - dump keys to stdout
     * `/s` - recurse
 
-* Enable `REGEDIT` if it has been disabled through policy
-  > `REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f`
+* Enable `REGEDIT` if it has been disabled through policy  
+  `REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f`
 
-* Enable `TASKMGR` if it has been disabled through policy
-  > `REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 0 /f`
+* Enable `TASKMGR` if it has been disabled through policy  
+  `REG ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 0 /f`
 
-* Show (network?) Printer registry settings
-  >  `REG QUERY "HKCU\Printers\Connections\"`
+* Show (network?) Printer registry settings  
+   `REG QUERY "HKCU\Printers\Connections\"`
 
-* Show Windows User Profile keys
-  >  `REG QUERY "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList" /s`
+* Show Windows User Profile keys  
+   `REG QUERY "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList" /s`
 
-* Show Outlook profile keys
-  >  `REG QUERY "HKCU\Software\Microsoft\Windows NT\Current Version\Windows Messaging Subsystem\Profiles" /s`
+* Show Outlook profile keys  
+   `REG QUERY "HKCU\Software\Microsoft\Windows NT\Current Version\Windows Messaging Subsystem\Profiles" /s`
+
 > [!IMPORTANT]
 > Note the space in "Current Version"
 
-* Show Mapped network drives
-  >  `REG QUERY "HKCU\Network" /s`
+* Show Mapped network drives  
+   `REG QUERY "HKCU\Network" /s`
 
-* Show TCPIP parameters rewritten by `netsh int ip reset`
-  >  `REG QUERY "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\"`
-  >  `REG QUERY "HKLM\SYSTEM\CurrentControlSet\Services\DHCP\Parameters\"`
+* Show TCPIP parameters rewritten by `netsh int ip reset`  
+   `REG QUERY "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\"`  
+   `REG QUERY "HKLM\SYSTEM\CurrentControlSet\Services\DHCP\Parameters\"`
 
-* Show IE6 Internet Zone Settings
-  >  `REG QUERY "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap" /s`
-  >  `REG QUERY "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones" /s`
+* Show IE6 Internet Zone Settings  
+   `REG QUERY "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap" /s`  
+   `REG QUERY "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones" /s`
 
 * Meaning of bits in key `HKLM\Software\Microsoft\Windows NT\CurrentVersion\ProfileList\SID State`:
 
@@ -77,17 +80,17 @@
 ```
 
 ### Miscellaneous
-* Show installed file system minifilters
-  >`fltmc`
+* Show installed file system minifilters  
+  `fltmc`
 
-* Reset Outlook navigation pane window to defaults (For cannot open the outlook window errors)
-  > `outlook.exe /resetnavpane`
+* Reset Outlook navigation pane window to defaults (For cannot open the outlook window errors)  
+  `outlook.exe /resetnavpane`
  
-* Show which tasks control which service
-  > `tasklist /svc`
+* Show which tasks control which service  
+  `tasklist /svc`
 
-* Start a separate Explorer process
-  > `explorer.exe /separate`
+* Start a separate Explorer process  
+  `explorer.exe /separate`
 
 * Control Panel Applets. Useful to launch from an admin shell.
 
@@ -112,8 +115,8 @@
 ### EMERGENCY SHUTDOWN!
 Handy for when you don't want the computer to write anything to the user's (generally "roaming") hive/profile before reboot. Otherwise, don't use this if a normal shutdown is possible!
  
-  1. Control+Alt+Delete
-  2. Control click on "Shut Down…"
-  3. Click "OK" 
+1. Control+Alt+Delete
+2. Control click on "Shut Down…"
+3. Click "OK" 
 
- ![Screenshot of the dire emergency shutdown dialog.](/assets/mrgency-shutdown.png)
+![Screenshot of the dire emergency shutdown dialog.](/assets/mrgency-shutdown.png)
