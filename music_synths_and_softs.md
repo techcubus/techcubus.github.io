@@ -1,0 +1,2 @@
+VCV Rack under Windows 7?  
+Rack2 needs opengl 3.2 so either use Rack 1.6 or putting opengl32.dll and libgallium_w32.dll from the mesa-dist-win package into the Rack 2 directory got it to actually start up
