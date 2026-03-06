@@ -3,16 +3,18 @@ Rack2 needs opengl 3.2 so either use Rack 1.6 or putting opengl32.dll and libgal
 
 #### vst hosts for Windows 
 
-* vsthost  
+* vsthost32/64  
   * tres buggy  
-  * no bundle support  
+  * no vst bundle support  
   * probably runs on 9x still?  
   * simple to intensely complicated  
 * lighthost  
   * holy crap have the computer muted before you run it 
   * lives in the system tray which is probably a turn on for someone  
 * nanohost  
-  * cromulent but won't run bundled  
+  * cromulent but won't run vst bundles
+  * can run multiple instances
+  * 32 and 64 bit versions
 * vcv rack  
   * great if you have the HP but automation controls are limited to like 24 inputs  
   * no 32 bit vsts == sadness :(  
