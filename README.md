@@ -12,6 +12,7 @@ This is where I take notes when I decide that GitHub is the best place to do so.
 
 * [Git & Github](gitnotes.md)
 * [Electronics](electronics_notes.md)
+* [Music Synths and Software](music_synths_and_softs.md)
 * [Windows XP for the Desperate](windowsxp.md)
 * [OpenSSL](opensslnotes.md)
 * [Active Directory](activedirectory.md)
