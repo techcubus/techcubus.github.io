@@ -29,6 +29,10 @@
    `systemd.debug-shell=1`  
 Opens a shell on tty9 very early in the boot process
 
+* Enable the serial console
+    `$ systemctl enable *(or start)* serial-getty@ttyS0.service`
+
+
 ### CentOS
 * Activate epel repo in CentOS 6  
   `# yum install http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm`
